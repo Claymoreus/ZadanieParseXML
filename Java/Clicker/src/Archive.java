@@ -1,5 +1,6 @@
 import java.util.*;
 import java.util.Map.Entry;
+import java.lang.*;
 
 public class Archive {
 
@@ -77,6 +78,14 @@ public class Archive {
 		differense.removeAll(numSet2);
 		System.out.println(differense);
 		
+		Set<Hero> heroBase = new HashSet<>();
+		
+		Hero hero01 = new Hero(1, "Drago");
+		Hero hero02 = new Hero(1, "Drago");
+		heroBase.add(hero01);
+		heroBase.add(hero02);
+		System.out.println(heroBase);
+		
 		
 	}
 	public static void testMap (Map<Integer, String> map) {
@@ -102,5 +111,39 @@ public class Archive {
 		}
 		System.out.println(" ");
 	}
+	
+	
 
+}
+class Hero {
+	private int id;
+	private String name;
+	
+	public Hero(int id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+	@Override
+	public String toString() {
+		return "Hero{" +
+				"id=" + id +
+				", name='" + name + '\'' + '}';
+	}
+	@Override
+	public boolean equals(Object o) {
+		if (this  == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		
+		Hero hero = (Hero) o;
+		
+		if (id != hero.id) return false;
+		return name != null ? name.equals(hero.name) : hero.name == null;
+	}
+	@Override
+	public int hashCode() {
+		int result = id;
+		result = 31 * result + (name != null ? name.hashCode() : 0);
+		return result;
+	}
+	
 }
