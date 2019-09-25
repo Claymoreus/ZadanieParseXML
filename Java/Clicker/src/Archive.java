@@ -47,6 +47,36 @@ public class Archive {
 		testSet(setHash);
 		testSet(setLink);
 		testSet(setTree);
+		System.out.println(setHash.contains("Altar"));
+		
+		Set<Integer> numSet = new HashSet<Integer>();
+		numSet.add(0);
+		numSet.add(1);
+		numSet.add(2);
+		numSet.add(3);
+		numSet.add(4);
+		numSet.add(5);
+		
+		Set<Integer> numSet2 = new HashSet<Integer>();
+		numSet2.add(4);
+		numSet2.add(5);
+		numSet2.add(6);
+		numSet2.add(7);
+		numSet2.add(8);
+		numSet2.add(9);
+		
+		Set<Integer> union = new HashSet<Integer>(numSet);
+		union.addAll(numSet2);
+		System.out.println(union);
+		
+		Set<Integer> intersection = new HashSet<Integer>(numSet);
+		intersection.retainAll(numSet2);
+		System.out.println(intersection);
+		
+		Set<Integer> differense = new HashSet<Integer>(numSet);
+		differense.removeAll(numSet2);
+		System.out.println(differense);
+		
 		
 	}
 	public static void testMap (Map<Integer, String> map) {
