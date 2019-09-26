@@ -86,7 +86,15 @@ public class Archive {
 		heroBase.add(hero02);
 		System.out.println(heroBase);
 		
+		float a = 3.25f;
+		double b = 3.56;
+		float c = (float) (a + b);
 		
+		int r = 10;
+		double d = 3;
+		double f = r / d;
+		
+		System.out.println(f);
 	}
 	public static void testMap (Map<Integer, String> map) {
 		map.put(1, "Ololol");
@@ -145,5 +153,6 @@ class Hero {
 		result = 31 * result + (name != null ? name.hashCode() : 0);
 		return result;
 	}
+
 	
 }
